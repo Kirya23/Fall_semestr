@@ -1,1 +1,1 @@
-# Fall_semestr
+# Шаблон настройки GitHub Actions
