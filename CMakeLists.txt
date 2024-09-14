@@ -55,6 +55,9 @@ else ()
     )
 endif()
 
+if(EXISTS "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake")
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake")
+endif()
 
 install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
 
