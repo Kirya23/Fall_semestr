@@ -100,7 +100,7 @@ jobs:
           submodules: true
       - name: Install Boost
         run: |
-          choco install boost --version=1.78.0 # Установите нужную версию Boost
+          choco install boost
           
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_BUILD_TYPE=Release
         # Проверьте опции и настройки в CMakeLists.txt
