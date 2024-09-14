@@ -88,6 +88,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release_.outputs.upload_url }}
-          asset_path: ${{ runner.workspace }}/helloworld-0.0.${{ github.run_number }}-macOS.zip
+          asset_path: ./helloworld-0.0.${{ github.run_number }}-macOS.zip
           asset_name: helloworld-0.0.${{ github.run_number }}-macOS.zip
           asset_content_type: application/zip 
