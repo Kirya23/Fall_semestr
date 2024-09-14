@@ -98,11 +98,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
-      - name: Install Boost
+      - name: Install vcpkg
         run: |
-          choco install boost
-          
-      - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_BUILD_TYPE=Release
+            git clone https://github.com/microsoft/vcpkg.git
+            .vcpkgbootstrap-vcpkg.bat
+      - name: Install Boost
+        run: .vcpkgvcpkg install boost
+      - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_BUILD_TYPE=Release -DVCPKG_TARGET_TRIPLET=x64-windows
         # Проверьте опции и настройки в CMakeLists.txt
         
       - run: cmake --build . --config Release
