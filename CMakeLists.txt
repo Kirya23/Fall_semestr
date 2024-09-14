@@ -58,11 +58,9 @@ endif()
 
 install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
 
-if(CMAKE_BUILD_TYPE STREQUAL "Release")
+
      set(CPACK_GENERATOR ZIP) 
-   elseif(CMAKE_BUILD_TYPE STREQUAL "Debug")
-     set(CPACK_GENERATOR DEB)
-   endif()
+   
 
 
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
