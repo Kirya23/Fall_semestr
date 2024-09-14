@@ -106,7 +106,7 @@ jobs:
           .\vcpkg\bootstrap-vcpkg.bat
 
       - name: Install Boost
-        run: .\vcpkg\vcpkg install boost[unit_test_framework] # Укажите необходимые компоненты
+        run: .\vcpkg\vcpkg install boost # Укажите необходимые компоненты
 
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_BUILD_TYPE=Release -DVCPKG_ROOT=${{ github.workspace }}\vcpkg
         # Проверьте опции и настройки в CMakeLists.txt
