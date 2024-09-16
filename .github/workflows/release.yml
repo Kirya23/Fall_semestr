@@ -99,9 +99,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
-
-    
-
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_BUILD_TYPE=Release 
         # Проверьте опции и настройки в CMakeLists.txt
         
