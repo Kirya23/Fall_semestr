@@ -89,14 +89,14 @@ jobs:
       - name: List files in the directory
         run: ls -la
  
-      - name: Upload Release Asset ы
+      - name: Upload Release Asset 
         uses: actions/upload-release-asset@v1
         with:
             upload_url: ${{ github.event.release.upload_url }}
             asset_path: ./helloworld-0.0.20-macOS.zip
             asset_name: helloworld-0.0.20-macOS.zip 
             asset_content_type: application/zip
-          env:
+        env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
   
