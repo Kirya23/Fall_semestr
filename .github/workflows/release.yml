@@ -85,7 +85,7 @@ jobs:
         run: |
             mkdir output
             echo "Hello, world!" > output/helloworld.txt
-            zip -r ./helloworld-0.0.20-macOS.zip ./output
+            zip -r ./helloworld-0.0.${{ github.run_number }}-macOS.zip ./output
   
 
       - name: List files in the directory
@@ -95,8 +95,8 @@ jobs:
         uses: actions/upload-release-asset@v1
         with:
             upload_url: ${{ steps.create_release_.outputs.upload_url }}
-            asset_path: ./helloworld-0.0.20-macOS.zip
-            asset_name: helloworld-0.0.20-macOS.zip 
+            asset_path: ./helloworld-0.0.${{ github.run_number }}-macOS.zip
+            asset_name: helloworld-0.0.${{ github.run_number }}-macOS.zip 
             asset_content_type: application/zip
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
