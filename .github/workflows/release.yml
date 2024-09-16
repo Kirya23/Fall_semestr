@@ -102,7 +102,7 @@ jobs:
 
     
 
-      - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_BUILD_TYPE=Release -DVCPKG_ROOT=${{ github.workspace }}\vcpkg
+      - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DCMAKE_BUILD_TYPE=Release 
         # Проверьте опции и настройки в CMakeLists.txt
         
       - run: cmake --build . --config Release
